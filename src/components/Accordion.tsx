@@ -5,9 +5,10 @@ type AccordionType={
     collapsed:boolean
 }
 export function Accordion(props:AccordionType) {
-    if (props.collapsed===true){
+    /*if (props.collapsed===true){
         return (
             <div>
+
                 <AccordionTitle title={props.title} />
             </div>
         );
@@ -18,7 +19,13 @@ export function Accordion(props:AccordionType) {
                 <AccordionBody />
             </div>
         );
-    }
+    }*/
+    return (
+        <div>
+            <AccordionTitle title={props.title} />
+            {!props.collapsed && <AccordionBody />}
+        </div>
+    );
 
 
 }

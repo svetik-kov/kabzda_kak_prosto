@@ -4,12 +4,13 @@ type AccordionType={
     title:string
     collapsed:boolean
     onChange:()=>void
+    color?:string
 }
 export function Accordion(props:AccordionType) {
 
     return (
         <div>
-            <AccordionTitle title={props.title}  onChange={props.onChange}/>
+            <AccordionTitle title={props.title}  onChange={props.onChange} color={props.color}/>
             {!props.collapsed && <AccordionBody />}
         </div>
     );
@@ -20,9 +21,12 @@ export function Accordion(props:AccordionType) {
 type AccordionTitleType={
     title:string
     onChange:()=>void
+    color?:string
 }
 function AccordionTitle(props:AccordionTitleType) {
-    return <h1 onClick={props.onChange}> {props.title}</h1>
+    return <h1
+        style={{color:props.color ? props.color : 'black'}}
+        onClick={()=>props.onChange()}> {props.title}</h1>
 }
 
 

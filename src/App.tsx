@@ -6,11 +6,16 @@ import {UnControlledOnOff} from './components/OnOff/UnControlledOnOff';
 import {UnControlledAccordion} from './components/Accordion/UnControlledAccordion';
 import {UnControlledRating} from './components/Rating/UnControlledRating';
 import {OnOff} from './components/OnOff/OnOff';
+import {GetValueOfUnControlledInputByButton, UnControlledInput} from './Input';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     const [switchOn, setSwitchOn] = useState(false)
+
+    const onChangeHandler = () => {
+        setRatingValue(ratingValue)
+    }
     return (
         <div className="App">
             <PageTitle title={'This is App'}/>
@@ -30,12 +35,16 @@ function App() {
             <UnControlledOnOff/>
             <UnControlledOnOff/>*/}
 
+
             <UnControlledAccordion title={'Menu'}/>
             <UnControlledAccordion title={'Users'}/>
-            <UnControlledRating/>
+            <UnControlledRating onChange={onChangeHandler}/>
             <UnControlledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
+         <div>   <UnControlledInput/></div>
+            <GetValueOfUnControlledInputByButton/>
         </div>
+
     );
 }
 

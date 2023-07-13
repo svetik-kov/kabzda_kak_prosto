@@ -1,41 +1,61 @@
-import React from "react";
+import React from 'react';
 
-type AccordionType={
-    title:string
-    collapsed:boolean
-    onChange:()=>void
-    color?:string
+type ItemType = {
+    title: string,
+    value: number
 }
-export function Accordion(props:AccordionType) {
+
+type AccordionType = {
+    title: string
+    collapsed: boolean
+    onChange: () => void
+    color?: string
+    item: ItemType[]
+    onClick: (value: number) => void
+}
+
+export function Accordion(props: AccordionType) {
 
     return (
         <div>
-            <AccordionTitle title={props.title}  onChange={props.onChange} color={props.color}/>
-            {!props.collapsed && <AccordionBody />}
+            <AccordionTitle title={props.title} onChange={props.onChange} color={props.color}/>
+            {!props.collapsed && <AccordionBody item={props.item} onClick={props.onClick}/>}
         </div>
     );
 
 
 }
 
-type AccordionTitleType={
-    title:string
-    onChange:()=>void
-    color?:string
+type AccordionTitleType = {
+    title: string
+    onChange: () => void
+    color?: string
 }
-function AccordionTitle(props:AccordionTitleType) {
+
+function AccordionTitle(props: AccordionTitleType) {
     return <h1
-        style={{color:props.color ? props.color : 'black'}}
-        onClick={()=>props.onChange()}> {props.title}</h1>
+        style={{color: props.color ? props.color : 'black'}}
+        onClick={() => props.onChange()}> {props.title}</h1>
 }
 
+type AccordionBodyType = {
+    item: ItemType[]
+    onClick: (value: number) => void
+}
 
-function AccordionBody() {
+function AccordionBody(props: AccordionBodyType) {
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+
+            {props.item.map((i, index) =>
+                <li
+                key={index}
+                onClick={()=>props.onClick(i.value)}
+                >{i.title}
+              </li>
+            )}
+
         </ul>
+
     )
 }

@@ -6,7 +6,7 @@ import {UnControlledOnOff} from './components/OnOff/UnControlledOnOff';
 import {UnControlledAccordion} from './components/Accordion/UnControlledAccordion';
 import {UnControlledRating} from './components/Rating/UnControlledRating';
 import {OnOff} from './components/OnOff/OnOff';
-import {ControlledSelect, GetValueOfUnControlledInputByButton, UnControlledInput} from './Input';
+import {ControlledSelect, GetValueOfUnControlledInputByButton, UnControlledInput} from './components/Input';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -16,6 +16,8 @@ function App() {
     const onChangeHandler = () => {
         setRatingValue(ratingValue)
     }
+
+
     return (
         <div className="App">
             <PageTitle title={'This is App'}/>
@@ -23,10 +25,20 @@ function App() {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <Accordion title={'Menu'}
                        collapsed={!accordionCollapsed}
-                       onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+                       onChange={() => setAccordionCollapsed(!accordionCollapsed)} onClick={() => {
+            }} item={[]}/>
             <Accordion title={'Users'}
                        collapsed={accordionCollapsed}
-                       onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+                       onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+                       item={[
+                           {title: 'Artem', value: 1},
+                           {title: 'Svetlana', value: 2},
+                           {title: 'Ivan', value: 3},
+                           {title: 'Sasha', value: 4}]}
+                       onClick={(value) => {
+                           console.log(`user with ${value}`)
+                       }}
+            />
 
             <OnOff on={switchOn} onChange={setSwitchOn}/>
             Article 2
@@ -41,7 +53,7 @@ function App() {
             <UnControlledRating onChange={onChangeHandler}/>
             <UnControlledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
-         <div>   <UnControlledInput/></div>
+            <div><UnControlledInput/></div>
             <GetValueOfUnControlledInputByButton/>
             <div>
                 <ControlledSelect/>

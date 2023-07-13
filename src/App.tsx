@@ -6,7 +6,7 @@ import {UnControlledOnOff} from './components/OnOff/UnControlledOnOff';
 import {UnControlledAccordion} from './components/Accordion/UnControlledAccordion';
 import {UnControlledRating} from './components/Rating/UnControlledRating';
 import {OnOff} from './components/OnOff/OnOff';
-import {GetValueOfUnControlledInputByButton, UnControlledInput} from './Input';
+import {ControlledSelect, GetValueOfUnControlledInputByButton, UnControlledInput} from './Input';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -43,6 +43,9 @@ function App() {
 
          <div>   <UnControlledInput/></div>
             <GetValueOfUnControlledInputByButton/>
+            <div>
+                <ControlledSelect/>
+            </div>
         </div>
 
     );

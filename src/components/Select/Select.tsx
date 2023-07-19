@@ -16,6 +16,7 @@ export const Select: React.FC<SelectType> = (props) => {
 
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
     const [active, setActive] = useState(false)
+
     const selectedItem = props.item.find(el => el.value === props.value)
     const hoveredItem = props.item.find(el => el.value === hoveredElementValue)
 
@@ -31,7 +32,7 @@ export const Select: React.FC<SelectType> = (props) => {
         toggleItems()
     }
     const onKeyUpHandler = (e:KeyboardEvent<HTMLDivElement>) => {
-        console.log(e.key)
+
         if (e.key==='ArrowDown' || e.key==='ArrowUp'){
             for (let i = 0; i < props.item.length; i++) {
                 if (props.item[i].value === hoveredElementValue) {

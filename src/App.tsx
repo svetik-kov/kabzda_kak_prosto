@@ -9,6 +9,7 @@ import {OnOff} from './components/OnOff/OnOff';
 import {ControlledSelect, GetValueOfUnControlledInputByButton, UnControlledInput} from './components/Input';
 import {Select} from './components/Select/Select';
 import {Example} from './components/ReactMemo';
+import {DifficultCountingExample, HelpForReactMemoExample} from './components/UseMemo';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -74,6 +75,10 @@ function App() {
                 }/></div>
             <div>/////////////////////////////////////////////////</div>
             <div><Example/></div>
+            <div>/////////////////////////////////////////////////</div>
+            <div>< DifficultCountingExample/></div>
+            <div>/////////////////////////////////////////////////</div>
+            <div><HelpForReactMemoExample/></div>
         </div>
 
     );

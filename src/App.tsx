@@ -8,6 +8,7 @@ import {UnControlledRating} from './components/Rating/UnControlledRating';
 import {OnOff} from './components/OnOff/OnOff';
 import {ControlledSelect, GetValueOfUnControlledInputByButton, UnControlledInput} from './components/Input';
 import {Select} from './components/Select/Select';
+import {Example} from './components/ReactMemo';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -41,7 +42,7 @@ function App() {
                            console.log(`user with ${value}`)
                        }}
             />
-
+            <div>/////////////////////////////////////////////////</div>
             <OnOff on={switchOn} onChange={setSwitchOn}/>
             Article 2
 
@@ -52,11 +53,14 @@ function App() {
 
             <UnControlledAccordion title={'Menu'}/>
             <UnControlledAccordion title={'Users'}/>
+            <div>/////////////////////////////////////////////////</div>
             <UnControlledRating onChange={onChangeHandler}/>
+            <div>/////////////////////////////////////////////////</div>
             <UnControlledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
-
+            <div>/////////////////////////////////////////////////</div>
             <div><UnControlledInput/></div>
             <GetValueOfUnControlledInputByButton/>
+            <div>/////////////////////////////////////////////////</div>
             <div>
                 <ControlledSelect/>
             </div>
@@ -68,6 +72,8 @@ function App() {
                         {title: 'Kiev', value: 2},
                         {title: 'Brest', value: 3},]
                 }/></div>
+            <div>/////////////////////////////////////////////////</div>
+            <div><Example/></div>
         </div>
 
     );

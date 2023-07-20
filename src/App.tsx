@@ -10,6 +10,7 @@ import {ControlledSelect, GetValueOfUnControlledInputByButton, UnControlledInput
 import {Select} from './components/Select/Select';
 import {Example} from './components/ReactMemo';
 import {DifficultCountingExample, HelpForReactMemoExample} from './components/UseMemo';
+import {LikeUseCallback} from './components/LikeUseCallback';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -79,6 +80,8 @@ function App() {
             <div>< DifficultCountingExample/></div>
             <div>/////////////////////////////////////////////////</div>
             <div><HelpForReactMemoExample/></div>
+            <div>/////////////////////////////////////////////////</div>
+            <div><LikeUseCallback/></div>
         </div>
 
     );

@@ -11,6 +11,7 @@ import {Select} from './components/Select/Select';
 import {Example} from './components/ReactMemo';
 import {DifficultCountingExample, HelpForReactMemoExample} from './components/UseMemo';
 import {LikeUseCallback} from './components/LikeUseCallback';
+import {Example1} from './components/UseState';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -82,6 +83,12 @@ function App() {
             <div><HelpForReactMemoExample/></div>
             <div>/////////////////////////////////////////////////</div>
             <div><LikeUseCallback/></div>
+
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////
+            <div>
+                <Example1/>
+            </div>
         </div>
 
     );

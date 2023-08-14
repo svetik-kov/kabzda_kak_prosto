@@ -24,7 +24,6 @@ export const LikeUseCallback = () => {
         setBooks([...books, 'Angular' + new Date().getTime()])
     }, [books])
 
-
     /*  const newArray = useMemo(() => {
           return books.filter(u => u.toLowerCase().indexOf('a') !== -1)
       }, [books])

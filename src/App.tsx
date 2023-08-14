@@ -13,6 +13,7 @@ import {DifficultCountingExample, HelpForReactMemoExample} from './components/Us
 import {LikeUseCallback} from './components/LikeUseCallback';
 import {Example1} from './components/UseState';
 import {SetTimeOutExample, SimpleExample} from './components/UseEffect';
+import {Clock} from './components/Clock/Clock';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -99,6 +100,10 @@ function App() {
             ////////////////////////////////////////////////
             <div>
                 <SetTimeOutExample/>
+            </div>
+            //////////////////////
+            <div>
+                < Clock/>
             </div>
         </div>
 

@@ -12,12 +12,13 @@ import {Example} from './components/ReactMemo';
 import {DifficultCountingExample, HelpForReactMemoExample} from './components/UseMemo';
 import {LikeUseCallback} from './components/LikeUseCallback';
 import {Example1} from './components/UseState';
+import {SimpleExample} from './components/UseEffect';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     const [switchOn, setSwitchOn] = useState(false)
-    const [value,setValue]=useState(1)
+    const [value, setValue] = useState(1)
 
     const onChangeHandler = () => {
         setRatingValue(ratingValue)
@@ -69,7 +70,9 @@ function App() {
             </div>
             <div><Select
                 value={value}
-                onChange={(value:any) => {setValue(value)}}
+                onChange={(value: any) => {
+                    setValue(value)
+                }}
                 item={
                     [{title: 'Minsk', value: 1},
                         {title: 'Kiev', value: 2},
@@ -88,6 +91,10 @@ function App() {
             //////////////////////////////////////////////////////
             <div>
                 <Example1/>
+            </div>
+            //////////////////////////////////////////////////
+            <div>
+                <SimpleExample/>
             </div>
         </div>
 

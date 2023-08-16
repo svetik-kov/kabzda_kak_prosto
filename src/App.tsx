@@ -103,13 +103,16 @@ function App() {
             </div>
             //////////////////////
             <div>
-                < Clock/>
+                < Clock mode={'digital'} />
+            </div>
+            <div>
+                < Clock mode={'analog'}/>
             </div>
         </div>
 
     );
 }
-
+/////
 type PageTitleType = {
     title: string
 }
